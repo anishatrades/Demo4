@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARGET INVEST FX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+          font-family: 'Poppins', sans-serif;
+          margin: 0;
+          background-color: #f9fafc;
+          color: #0a1a3a;
+        }
+        .hero {
+          position: relative;
+          text-align: center;
+          color: white;
+        }
+        .hero-image {
+          width: 100%;
+          height: 350px;
+          object-fit: cover;
+          filter: brightness(0.5);
+        }
+        .hero-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          max-width: 90%;
+        }
+        .btn-green {
+          background-color: #25d366;
+          color: white;
+          padding: 12px 22px;
+          border-radius: 30px;
+          text-decoration: none;
+          font-weight: 600;
+          display: inline-block;
+          margin-top: 10px;
+        }
+        .about, .reviews, .faq {
+          text-align: center;
+          padding: 40px 20px;
+        }
+        .stats {
+          display: flex;
+          justify-content: center;
+          gap: 25px;
+          margin: 20px 0;
+        }
+        .stats div {
+          text-align: center;
+        }
+        .review-container {
+          display: flex;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          gap: 15px;
+          padding: 10px;
+        }
+        .review {
+          min-width: 250px;
+          background: white;
+          border-radius: 12px;
+          padding: 15px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .faq-item {
+          margin-bottom: 15px;
+          text-align: left;
+          max-width: 600px;
+          margin: 10px auto;
+        }
+        .faq-question {
+          background-color: #0a1a3a;
+          color: white;
+          border: none;
+          width: 100%;
+          text-align: left;
+          padding: 15px;
+          border-radius: 10px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+        .faq-answer {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease-out;
+          background: white;
+          border-radius: 0 0 10px 10px;
+          padding: 0 15px;
+        }
+        .faq-item.active .faq-answer {
+          max-height: 200px;
+          padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <img src="assets/top-image.jpg" alt="Trading Setup" class="hero-image">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>TARGET INVEST FX <span class="verified">✔️</span></h1>
+            <h2>#1 Most Profitable Investment Management Service</h2>
+            <p>Revolutionizing the financial world through AI-powered and algorithmic trading excellence. Experience consistency, transparency, and innovation in every strategy.</p>
+            <a href="https://wa.me/message/IUKHBAIKG5UIN1" class="btn-green">Connect with us on WhatsApp</a>
+        </div>
+    </header>
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>With over <b>11 years of experience</b> in financial markets and <b>2800+ active clients</b>, TARGET INVEST FX delivers advanced AI + algorithmic trading strategies designed for consistent profits and minimal risk exposure. Our expertise ensures your growth with the most efficient and data-driven systems available today.</p>
+        <div class="stats">
+            <div><h3>11+</h3><p>Years Experience</p></div>
+            <div><h3>2800+</h3><p>Active Clients</p></div>
+            <div><h3>100%</h3><p>Ethical Trading</p></div>
+        </div>
+        <a href="https://wa.me/message/IUKHBAIKG5UIN1" class="btn-green">Why wait? DM now to know more and start your journey</a>
+    </section>
+
+    <section class="reviews">
+        <h2>What do traders say?</h2>
+        <div class="review-container">
+            <div class="review">"Amazing accuracy and smooth performance! Arora Target Invest changed my trading life." – <b>Rajesh, Trader</b></div>
+            <div class="review">"Their algo trading strategy is just next level. Very consistent results!" – <b>Meena, FX Enthusiast</b></div>
+            <div class="review">"Target Invest FX provides exactly what every serious trader needs — reliability and results." – <b>CryptoDaily Community</b></div>
+            <div class="review">"Started with $100, and within a month, I saw steady returns. Highly recommended!" – <b>Akash, Client</b></div>
+            <div class="review">"Professional, transparent, and very supportive team. Worth every penny." – <b>John, Investor</b></div>
+            <div class="review">"I've used many services, but this one feels genuinely AI-powered." – <b>Emily, Forex Pro</b></div>
+            <div class="review">"100% satisfied with the strategies — highly efficient and easy to follow." – <b>Rehan, Trader</b></div>
+            <div class="review">"Their AI and algo blend works wonders! Consistent weekly profits." – <b>Olivia, Crypto Analyst</b></div>
+            <div class="review">"Target Invest FX is the most reliable platform I’ve used so far." – <b>Leo, Market Expert</b></div>
+            <div class="review">"The strategies feel human-smart but technically perfect. Awesome!" – <b>Arjun, FX Partner</b></div>
+            <div class="review">"From beginner to confident trader — thanks to this team’s guidance." – <b>Priya, Client</b></div>
+            <div class="review">"Arora Target Invest keeps everything professional and transparent." – <b>CryptoWorld Group</b></div>
+            <div class="review">"This is not hype. It’s real algo-trading power at its best." – <b>David, Pro Investor</b></div>
+            <div class="review">"Reliable, efficient, and top-tier results — exactly what I wanted." – <b>Ashley, Trader</b></div>
+            <div class="review">"Since joining, I’ve learned more about the markets than ever before." – <b>Sana, FX Learner</b></div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question">What is my work or what should I do as a beginner?</button>
+            <div class="faq-answer">
+                <p>Once you join, our experts handle most of the trading process for you. You just need to stay connected on WhatsApp, follow simple updates, and watch your account grow with our AI & algo-driven strategies.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Do I need trading experience to use it?</button>
+            <div class="faq-answer">
+                <p>No experience needed! Our AI + Algorithmic systems analyze markets and execute precise strategies automatically, optimized through over 11 years of proven expertise — so even beginners can profit confidently.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What's the recommended starting amount for trading?</button>
+            <div class="faq-answer">
+                <p>While $70–80 is good to begin, we recommend starting with $250–$500 for more flexibility and profit potential. Our efficient strategies emphasize balanced growth with extremely low exposure to market risk.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          item.classList.toggle('active');
+        });
+      });
+    </script>
+</body>
+</html>
