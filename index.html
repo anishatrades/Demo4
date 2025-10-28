@@ -1,177 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TARGET INVEST FX</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-          font-family: 'Poppins', sans-serif;
-          margin: 0;
-          background-color: #f9fafc;
-          color: #0a1a3a;
-        }
-        .hero {
-          position: relative;
-          text-align: center;
-          color: white;
-        }
-        .hero-image {
-          width: 100%;
-          height: 350px;
-          object-fit: cover;
-          filter: brightness(0.5);
-        }
-        .hero-content {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-          max-width: 90%;
-        }
-        .btn-green {
-          background-color: #25d366;
-          color: white;
-          padding: 12px 22px;
-          border-radius: 30px;
-          text-decoration: none;
-          font-weight: 600;
-          display: inline-block;
-          margin-top: 10px;
-        }
-        .about, .reviews, .faq {
-          text-align: center;
-          padding: 40px 20px;
-        }
-        .stats {
-          display: flex;
-          justify-content: center;
-          gap: 25px;
-          margin: 20px 0;
-        }
-        .stats div {
-          text-align: center;
-        }
-        .review-container {
-          display: flex;
-          overflow-x: auto;
-          scroll-behavior: smooth;
-          gap: 15px;
-          padding: 10px;
-        }
-        .review {
-          min-width: 250px;
-          background: white;
-          border-radius: 12px;
-          padding: 15px;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        .faq-item {
-          margin-bottom: 15px;
-          text-align: left;
-          max-width: 600px;
-          margin: 10px auto;
-        }
-        .faq-question {
-          background-color: #0a1a3a;
-          color: white;
-          border: none;
-          width: 100%;
-          text-align: left;
-          padding: 15px;
-          border-radius: 10px;
-          font-weight: 600;
-          cursor: pointer;
-        }
-        .faq-answer {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.4s ease-out;
-          background: white;
-          border-radius: 0 0 10px 10px;
-          padding: 0 15px;
-        }
-        .faq-item.active .faq-answer {
-          max-height: 200px;
-          padding: 15px;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TARGET INVEST FX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --blue:#0b3a82;
+    --muted:#6b7280;
+    --wa:#25D366;
+    --card-shadow: 0 8px 24px rgba(11,58,130,0.06);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    margin:0;background:linear-gradient(180deg,#f7f9fc 0%, #ffffff 30%);color:#072034;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* HERO / TOP */
+  .hero{
+    position:relative;
+    max-width:920px;margin:14px auto 0;padding:0 16px;
+  }
+  .hero .top-image{
+    width:100%;height:360px;object-fit:cover;border-radius:20px;display:block;filter:brightness(0.55);
+  }
+  .hero .hero-inner{
+    position:absolute;left:24px;right:24px;top:18px;display:flex;flex-direction:column;gap:8px;
+    align-items:flex-start;padding:14px;
+  }
+  .brand-row{display:flex;align-items:center;gap:12px}
+  .brand-name{font-size:20px;font-weight:800;color:#fff;display:flex;align-items:center;gap:10px}
+  .tick{width:26px;height:26px;border-radius:6px;background:#e6f2ff;display:inline-flex;align-items:center;justify-content:center}
+  .tick svg{width:14px;height:14px;fill:var(--blue)}
+  .hero-subtitle{color:#ffffff;font-weight:700;background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;font-size:13px}
+  .hero-headline{margin-top:18px;color:#fff;font-size:22px;font-weight:700}
+  .hero-desc{color:#e6f1ff;max-width:740px;font-size:14px;margin-top:6px;line-height:1.5}
+
+  /* CTA centered inside hero area (but shown below in layout for clarity) */
+  .hero-cta{margin-top:12px}
+
+  /* ABOUT CARD (compact) */
+  .about-wrap{max-width:920px;margin: -48px auto 0;padding:0 16px 16px;position:relative;z-index:10}
+  .about-card{background:#fff;border-radius:18px;padding:20px;box-shadow:var(--card-shadow);display:flex;gap:18px;align-items:center;flex-direction:column}
+  .about-title{align-self:flex-start;color:var(--blue);font-size:20px;font-weight:700;margin-bottom:6px}
+  .about-text{color:var(--muted);line-height:1.55;margin:0 0 8px;max-width:820px;text-align:left}
+  .stats-row{display:flex;gap:22px;justify-content:center;width:100%;margin-top:12px}
+  .stat{background:transparent;padding:6px 12px;border-radius:12px;text-align:center}
+  .stat strong{display:block;font-size:22px;color:var(--blue);font-weight:800}
+  .stat small{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+
+  /* Main CTA big green (inside about card as screenshot) */
+  .big-cta{display:inline-block;background:var(--wa);color:#fff;padding:14px 22px;border-radius:999px;font-weight:700;margin-top:14px;text-decoration:none;box-shadow:0 10px 30px rgba(37,211,102,0.12)}
+
+  /* Reviews section */
+  .reviews-section{max-width:920px;margin:28px auto;padding:0 16px}
+  .reviews-title{text-align:center;color:var(--blue);font-weight:700;font-size:20px;margin-bottom:12px}
+  .reviews-sub{color:var(--muted);text-align:center;margin-bottom:18px}
+  .reviews-track{display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch}
+  .review-card{min-width:78%;max-width:78%;background:#f7fbff;border-radius:14px;padding:18px;box-shadow:0 8px 22px rgba(11,58,130,0.04);flex-shrink:0;scroll-snap-align:center}
+  @media(min-width:900px){
+    .review-card{min-width:320px;max-width:380px}
+  }
+  .review-quote{color:#072034;font-size:15px;line-height:1.6;margin:0 0 10px}
+  .review-meta{color:var(--blue);font-weight:700;font-size:13px}
+  .review-date{display:block;color:var(--muted);font-size:12px;margin-top:6px}
+
+  /* FAQ area */
+  .faq-wrap{max-width:920px;margin:24px auto;padding:0 16px 36px}
+  .faq-title{color:var(--blue);text-align:left;font-weight:700;font-size:20px;margin-bottom:12px}
+  .faq-item{background:#fff;border-radius:12px;padding:0;margin-bottom:10px;box-shadow:var(--card-shadow);overflow:hidden}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;cursor:pointer;color:var(--blue);font-weight:600}
+  .faq-a{padding:0 16px 16px;color:var(--muted);max-height:0;overflow:hidden;transition:max-height .36s ease, padding .36s ease}
+  .faq-item.open .faq-a{max-height:250px;padding-top:12px}
+
+  /* Sticky WhatsApp button (mobile full-width bottom) */
+  .wa-float{position:fixed;left:16px;right:16px;bottom:16px;z-index:999;background:var(--wa);color:#fff;border-radius:14px;padding:14px 18px;text-align:center;font-weight:800;box-shadow:0 12px 40px rgba(37,211,102,0.18);text-decoration:none;display:none}
+  @media(max-width:820px){ .wa-float{display:block} }
+
+  /* small helpers */
+  .center{display:flex;justify-content:center}
+  .visually-hidden{position:absolute;left:-9999px}
+</style>
 </head>
 <body>
-    <header class="hero">
-        <img src="assets/top-image.jpg" alt="Trading Setup" class="hero-image">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1>TARGET INVEST FX <span class="verified">✔️</span></h1>
-            <h2>#1 Most Profitable Investment Management Service</h2>
-            <p>Revolutionizing the financial world through AI-powered and algorithmic trading excellence. Experience consistency, transparency, and innovation in every strategy.</p>
-            <a href="https://wa.me/message/IUKHBAIKG5UIN1" class="btn-green">Connect with us on WhatsApp</a>
-        </div>
-    </header>
 
-    <section class="about">
-        <h2>About Us</h2>
-        <p>With over <b>11 years of experience</b> in financial markets and <b>2800+ active clients</b>, TARGET INVEST FX delivers advanced AI + algorithmic trading strategies designed for consistent profits and minimal risk exposure. Our expertise ensures your growth with the most efficient and data-driven systems available today.</p>
-        <div class="stats">
-            <div><h3>11+</h3><p>Years Experience</p></div>
-            <div><h3>2800+</h3><p>Active Clients</p></div>
-            <div><h3>100%</h3><p>Ethical Trading</p></div>
+  <!-- HERO with image -->
+  <div class="hero">
+    <img class="top-image" src="assets/top-image.jpg" alt="Trading Setup - TARGET INVEST FX">
+    <div class="hero-inner" aria-hidden="false">
+      <div class="brand-row">
+        <div class="brand-name">TARGET INVEST FX
+          <span class="tick" title="Verified">
+            <!-- nicer blue tick SVG -->
+            <svg viewBox="0 0 24 24" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 16.2c-.3 0-.6-.1-.8-.3l-3.2-3.2c-.7-.7-.7-1.9 0-2.6.7-.7 1.9-.7 2.6 0l1.6 1.6 5.7-6c.7-.7 1.9-.7 2.6 0 .7.7.7 1.9 0 2.6L10.3 15.9c-.2.2-.5.3-.8.3z" fill="#0b3a82"/></svg>
+          </span>
         </div>
-        <a href="https://wa.me/message/IUKHBAIKG5UIN1" class="btn-green">Why wait? DM now to know more and start your journey</a>
-    </section>
+      </div>
 
-    <section class="reviews">
-        <h2>What do traders say?</h2>
-        <div class="review-container">
-            <div class="review">"Amazing accuracy and smooth performance! Arora Target Invest changed my trading life." – <b>Rajesh, Trader</b></div>
-            <div class="review">"Their algo trading strategy is just next level. Very consistent results!" – <b>Meena, FX Enthusiast</b></div>
-            <div class="review">"Target Invest FX provides exactly what every serious trader needs — reliability and results." – <b>CryptoDaily Community</b></div>
-            <div class="review">"Started with $100, and within a month, I saw steady returns. Highly recommended!" – <b>Akash, Client</b></div>
-            <div class="review">"Professional, transparent, and very supportive team. Worth every penny." – <b>John, Investor</b></div>
-            <div class="review">"I've used many services, but this one feels genuinely AI-powered." – <b>Emily, Forex Pro</b></div>
-            <div class="review">"100% satisfied with the strategies — highly efficient and easy to follow." – <b>Rehan, Trader</b></div>
-            <div class="review">"Their AI and algo blend works wonders! Consistent weekly profits." – <b>Olivia, Crypto Analyst</b></div>
-            <div class="review">"Target Invest FX is the most reliable platform I’ve used so far." – <b>Leo, Market Expert</b></div>
-            <div class="review">"The strategies feel human-smart but technically perfect. Awesome!" – <b>Arjun, FX Partner</b></div>
-            <div class="review">"From beginner to confident trader — thanks to this team’s guidance." – <b>Priya, Client</b></div>
-            <div class="review">"Arora Target Invest keeps everything professional and transparent." – <b>CryptoWorld Group</b></div>
-            <div class="review">"This is not hype. It’s real algo-trading power at its best." – <b>David, Pro Investor</b></div>
-            <div class="review">"Reliable, efficient, and top-tier results — exactly what I wanted." – <b>Ashley, Trader</b></div>
-            <div class="review">"Since joining, I’ve learned more about the markets than ever before." – <b>Sana, FX Learner</b></div>
-        </div>
-    </section>
+      <div style="margin-top:8px">
+        <div class="hero-headline">#1 <span style="color: #cfe3ff">Most Profitable</span> Investment Management Service</div>
+        <div class="hero-desc">Transparent & Ethical Algo Trading in Forex & Crypto — AI-powered strategies backed by 11+ years of experience.</div>
+      </div>
+    </div>
+  </div>
 
-    <section class="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <button class="faq-question">What is my work or what should I do as a beginner?</button>
-            <div class="faq-answer">
-                <p>Once you join, our experts handle most of the trading process for you. You just need to stay connected on WhatsApp, follow simple updates, and watch your account grow with our AI & algo-driven strategies.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Do I need trading experience to use it?</button>
-            <div class="faq-answer">
-                <p>No experience needed! Our AI + Algorithmic systems analyze markets and execute precise strategies automatically, optimized through over 11 years of proven expertise — so even beginners can profit confidently.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">What's the recommended starting amount for trading?</button>
-            <div class="faq-answer">
-                <p>While $70–80 is good to begin, we recommend starting with $250–$500 for more flexibility and profit potential. Our efficient strategies emphasize balanced growth with extremely low exposure to market risk.</p>
-            </div>
-        </div>
-    </section>
+  <!-- About compact card overlapping hero -->
+  <div class="about-wrap">
+    <div class="about-card">
+      <div style="width:100%;display:flex;flex-direction:column;align-items:center">
+        <div class="about-title">About Us</div>
+        <p class="about-text">With over <strong>11 years of experience</strong> in financial markets and <strong>2800+ active clients</strong>, ARORA TARGET INVEST delivers professional, transparent and ethical algorithmic trading solutions for consistent growth. We combine AI with proven algorithmic strategies to manage trades and risk precisely.</p>
 
-    <script>
-      document.querySelectorAll('.faq-question').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const item = btn.parentElement;
-          item.classList.toggle('active');
-        });
-      });
-    </script>
+        <div class="stats-row">
+          <div class="stat"><strong>11+</strong><small>Years Experience</small></div>
+          <div class="stat"><strong>2800+</strong><small>Active Clients</small></div>
+          <div class="stat"><strong>100%</strong><small>Ethical Trading</small></div>
+        </div>
+
+        <a class="big-cta" href="https://wa.me/message/IUKHBAIKG5UIN1" target="_blank" rel="noopener">Connect with us on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviews -->
+  <section class="reviews-section" aria-label="Client reviews">
+    <div class="reviews-title">What do traders say?</div>
+    <div class="reviews-sub">Real experiences from clients, traders and community leaders</div>
+
+    <div class="reviews-track" id="reviewsTrack">
+      <!-- Each card shows quote, meta (name/role) and date -->
+      <article class="review-card">
+        <p class="review-quote">"I made more this past week with Target Invest than I did in an entire month without it. Highly recommended!"</p>
+        <div class="review-meta">Rajesh, Trader</div>
+        <div class="review-date">2025-01-20</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"Tools make trading easier; signals are clear and execution is quick." </p>
+        <div class="review-meta">Meena, Investor</div>
+        <div class="review-date">2025-02-05</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"Target Invest FX gave steadier returns than anything else I used in 2024." </p>
+        <div class="review-meta">Arjun, Forex Community Lead</div>
+        <div class="review-date">2024-03-12</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"The algo executes beautifully — the risk controls are excellent." </p>
+        <div class="review-meta">Lina, Day Trader</div>
+        <div class="review-date">2024-04-20</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"Professional and transparent; the team and the bot both work well together." </p>
+        <div class="review-meta">Michael, AI Trader</div>
+        <div class="review-date">2024-05-18</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"Joined through a Telegram community — Arora Target Invest helped me recover losses." </p>
+        <div class="review-meta">Rahul, Client</div>
+        <div class="review-date">2024-06-09</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"Target Invest FX is redefining automated trading for retail clients." </p>
+        <div class="review-meta">Anya, Crypto Trader</div>
+        <div class="review-date">2024-07-05</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"Near-perfect signals; consistent weekly growth." </p>
+        <div class="review-meta">David, Market Analyst</div>
+        <div class="review-date">2024-08-14</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"From signals to execution — everything feels premium and precise." </p>
+        <div class="review-meta">Suresh, Investor</div>
+        <div class="review-date">2024-09-30</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"The algo trades like a pro — great onboarding experience." </p>
+        <div class="review-meta">Maria, Verified Client</div>
+        <div class="review-date">2024-10-18</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"AI handles the emotions — I no longer overtrade." </p>
+        <div class="review-meta">Omar, Crypto Analyst</div>
+        <div class="review-date">2024-12-03</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"Clear communication, fast updates and stable performance." </p>
+        <div class="review-meta">Neha, Trader</div>
+        <div class="review-date">2025-02-25</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"I’ve tried many platforms — Target Invest FX is the most stable." </p>
+        <div class="review-meta">Leo, Client</div>
+        <div class="review-date">2025-04-10</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"Community-integrated system with near-perfect accuracy." </p>
+        <div class="review-meta">Emily, Community Partner</div>
+        <div class="review-date">2025-07-06</div>
+      </article>
+
+      <article class="review-card">
+        <p class="review-quote">"Real results — genuine service and consistent gains." </p>
+        <div class="review-meta">Rohit Sharma, Verified Client</div>
+        <div class="review-date">2025-10-05</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-wrap">
+    <div class="faq-title">Frequently Asked Questions</div>
+
+    <div class="faq-item" id="faq1">
+      <div class="faq-q">What is my work or what should I do as a beginner? <span aria-hidden="true">+</span></div>
+      <div class="faq-a">
+        <p>After you join, our expert team and AI-driven systems handle most of the trading process: market scanning, strategy selection, and execution. Your role is simple — connect on WhatsApp, follow our daily updates, and monitor performance. We'll guide you step-by-step.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq2">
+      <div class="faq-q">Do I need trading experience to use it? <span aria-hidden="true">+</span></div>
+      <div class="faq-a">
+        <p>No. Our AI + algorithmic trading framework is built for both beginners and pros. It analyzes price, volume and market structure using models refined across 11+ years, and suggests/executed high-probability setups automatically.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq3">
+      <div class="faq-q">What's the recommended starting amount for trading? <span aria-hidden="true">+</span></div>
+      <div class="faq-a">
+        <p>You can begin with <strong>$70–$80</strong> to test our strategies, but we recommend <strong>$250–$500</strong> for better flexibility, smoother results and higher profit potential — optimized through our AI-driven risk management approach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- sticky whatsapp CTA (mobile) -->
+  <a class="wa-float" href="https://wa.me/message/IUKHBAIKG5UIN1" target="_blank" rel="noopener">Connect with us on WhatsApp</a>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const parent = q.parentElement;
+      parent.classList.toggle('open');
+      // close others if you want single-open behavior:
+      // document.querySelectorAll('.faq-item').forEach(it => { if(it !== parent) it.classList.remove('open') })
+    });
+  });
+
+  // Make reviews track center the first card (nice UX)
+  (function(){ const track = document.getElementById('reviewsTrack'); if(track){ track.scrollLeft = 8; }} )();
+
+  // Optional: keyboard arrows for review navigation
+  document.addEventListener('keydown', (e)=>{
+    const track = document.getElementById('reviewsTrack');
+    if(!track) return;
+    if(e.key === 'ArrowRight') track.scrollBy({left: track.clientWidth * 0.7, behavior:'smooth'});
+    if(e.key === 'ArrowLeft') track.scrollBy({left: -track.clientWidth * 0.7, behavior:'smooth'});
+  });
+</script>
 </body>
 </html>
