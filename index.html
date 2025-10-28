@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>TARGET INVEST FX</title>
 
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -18,34 +19,46 @@
   *{box-sizing:border-box}
   body{
     font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-    margin:0;background:linear-gradient(180deg,#f7f9fc 0%, #ffffff 30%);color:#072034;
+    margin:0;
+    background:linear-gradient(180deg,#f7f9fc 0%, #ffffff 30%);
+    color:#072034;
     -webkit-font-smoothing:antialiased;
   }
 
   /* HERO / TOP */
   .hero{
     position:relative;
-    max-width:920px;margin:14px auto 0;padding:0 16px;
+    max-width:920px;
+    margin:14px auto 0;
+    padding:0 16px;
   }
   .hero .top-image{
-    width:100%;height:360px;object-fit:cover;border-radius:20px;display:block;filter:brightness(0.55);
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    border-radius:20px;
+    display:block;
+    filter:brightness(0.55);
   }
   .hero .hero-inner{
-    position:absolute;left:24px;right:24px;top:18px;display:flex;flex-direction:column;gap:8px;
-    align-items:flex-start;padding:14px;
+    position:absolute;
+    left:24px;
+    right:24px;
+    top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    align-items:flex-start;
+    padding:14px;
   }
   .brand-row{display:flex;align-items:center;gap:12px}
   .brand-name{font-size:20px;font-weight:800;color:#fff;display:flex;align-items:center;gap:10px}
   .tick{width:26px;height:26px;border-radius:6px;background:#e6f2ff;display:inline-flex;align-items:center;justify-content:center}
   .tick svg{width:14px;height:14px;fill:var(--blue)}
-  .hero-subtitle{color:#ffffff;font-weight:700;background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;font-size:13px}
   .hero-headline{margin-top:18px;color:#fff;font-size:22px;font-weight:700}
   .hero-desc{color:#e6f1ff;max-width:740px;font-size:14px;margin-top:6px;line-height:1.5}
 
-  /* CTA centered inside hero area (but shown below in layout for clarity) */
-  .hero-cta{margin-top:12px}
-
-  /* ABOUT CARD (compact) */
+  /* ABOUT CARD */
   .about-wrap{max-width:920px;margin: -48px auto 0;padding:0 16px 16px;position:relative;z-index:10}
   .about-card{background:#fff;border-radius:18px;padding:20px;box-shadow:var(--card-shadow);display:flex;gap:18px;align-items:center;flex-direction:column}
   .about-title{align-self:flex-start;color:var(--blue);font-size:20px;font-weight:700;margin-bottom:6px}
@@ -55,23 +68,20 @@
   .stat strong{display:block;font-size:22px;color:var(--blue);font-weight:800}
   .stat small{display:block;color:var(--muted);font-size:13px;margin-top:6px}
 
-  /* Main CTA big green (inside about card as screenshot) */
   .big-cta{display:inline-block;background:var(--wa);color:#fff;padding:14px 22px;border-radius:999px;font-weight:700;margin-top:14px;text-decoration:none;box-shadow:0 10px 30px rgba(37,211,102,0.12)}
 
-  /* Reviews section */
+  /* REVIEWS */
   .reviews-section{max-width:920px;margin:28px auto;padding:0 16px}
   .reviews-title{text-align:center;color:var(--blue);font-weight:700;font-size:20px;margin-bottom:12px}
   .reviews-sub{color:var(--muted);text-align:center;margin-bottom:18px}
-  .reviews-track{display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch}
+  .reviews-track{display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
   .review-card{min-width:78%;max-width:78%;background:#f7fbff;border-radius:14px;padding:18px;box-shadow:0 8px 22px rgba(11,58,130,0.04);flex-shrink:0;scroll-snap-align:center}
-  @media(min-width:900px){
-    .review-card{min-width:320px;max-width:380px}
-  }
+  @media(min-width:900px){.review-card{min-width:320px;max-width:380px}}
   .review-quote{color:#072034;font-size:15px;line-height:1.6;margin:0 0 10px}
   .review-meta{color:var(--blue);font-weight:700;font-size:13px}
   .review-date{display:block;color:var(--muted);font-size:12px;margin-top:6px}
 
-  /* FAQ area */
+  /* FAQ */
   .faq-wrap{max-width:920px;margin:24px auto;padding:0 16px 36px}
   .faq-title{color:var(--blue);text-align:left;font-weight:700;font-size:20px;margin-bottom:12px}
   .faq-item{background:#fff;border-radius:12px;padding:0;margin-bottom:10px;box-shadow:var(--card-shadow);overflow:hidden}
@@ -79,26 +89,21 @@
   .faq-a{padding:0 16px 16px;color:var(--muted);max-height:0;overflow:hidden;transition:max-height .36s ease, padding .36s ease}
   .faq-item.open .faq-a{max-height:250px;padding-top:12px}
 
-  /* Sticky WhatsApp button (mobile full-width bottom) */
+  /* WHATSAPP BUTTON */
   .wa-float{position:fixed;left:16px;right:16px;bottom:16px;z-index:999;background:var(--wa);color:#fff;border-radius:14px;padding:14px 18px;text-align:center;font-weight:800;box-shadow:0 12px 40px rgba(37,211,102,0.18);text-decoration:none;display:none}
-  @media(max-width:820px){ .wa-float{display:block} }
-
-  /* small helpers */
-  .center{display:flex;justify-content:center}
-  .visually-hidden{position:absolute;left:-9999px}
+  @media(max-width:820px){.wa-float{display:block}}
 </style>
 </head>
 <body>
 
-  <!-- HERO with image -->
+  <!-- HERO SECTION -->
   <div class="hero">
-    <img class="top-image" src="assets/top-image.jpg" alt="Trading Setup - TARGET INVEST FX">
-    <div class="hero-inner" aria-hidden="false">
+    <img class="top-image" src="assets/s2sHnnXgAtcS0ZIJZbsGTCghbk.png" alt="Trading Setup - TARGET INVEST FX">
+    <div class="hero-inner">
       <div class="brand-row">
         <div class="brand-name">TARGET INVEST FX
           <span class="tick" title="Verified">
-            <!-- nicer blue tick SVG -->
-            <svg viewBox="0 0 24 24" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 16.2c-.3 0-.6-.1-.8-.3l-3.2-3.2c-.7-.7-.7-1.9 0-2.6.7-.7 1.9-.7 2.6 0l1.6 1.6 5.7-6c.7-.7 1.9-.7 2.6 0 .7.7.7 1.9 0 2.6L10.3 15.9c-.2.2-.5.3-.8.3z" fill="#0b3a82"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 16.2c-.3 0-.6-.1-.8-.3l-3.2-3.2c-.7-.7-.7-1.9 0-2.6.7-.7 1.9-.7 2.6 0l1.6 1.6 5.7-6c.7-.7 1.9-.7 2.6 0 .7.7.7 1.9 0 2.6L10.3 15.9c-.2.2-.5.3-.8.3z" fill="#0b3a82"/></svg>
           </span>
         </div>
       </div>
@@ -110,7 +115,7 @@
     </div>
   </div>
 
-  <!-- About compact card overlapping hero -->
+  <!-- ABOUT -->
   <div class="about-wrap">
     <div class="about-card">
       <div style="width:100%;display:flex;flex-direction:column;align-items:center">
@@ -123,106 +128,31 @@
           <div class="stat"><strong>100%</strong><small>Ethical Trading</small></div>
         </div>
 
-        <a class="big-cta" href="https://wa.me/message/IUKHBAIKG5UIN1" target="_blank" rel="noopener">Connect with us on WhatsApp</a>
+        <a class="big-cta" href="https://wa.me/message/IUKHBAIKG5UIN1" target="_blank">Connect with us on WhatsApp</a>
       </div>
     </div>
   </div>
 
-  <!-- Reviews -->
-  <section class="reviews-section" aria-label="Client reviews">
+  <!-- REVIEWS -->
+  <section class="reviews-section">
     <div class="reviews-title">What do traders say?</div>
     <div class="reviews-sub">Real experiences from clients, traders and community leaders</div>
 
     <div class="reviews-track" id="reviewsTrack">
-      <!-- Each card shows quote, meta (name/role) and date -->
       <article class="review-card">
-        <p class="review-quote">"I made more this past week with Target Invest than I did in an entire month without it. Highly recommended!"</p>
+        <p class="review-quote">"I made more this past week with Target Invest than I did in an entire month without it."</p>
         <div class="review-meta">Rajesh, Trader</div>
         <div class="review-date">2025-01-20</div>
       </article>
-
       <article class="review-card">
-        <p class="review-quote">"Tools make trading easier; signals are clear and execution is quick." </p>
-        <div class="review-meta">Meena, Investor</div>
-        <div class="review-date">2025-02-05</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"Target Invest FX gave steadier returns than anything else I used in 2024." </p>
-        <div class="review-meta">Arjun, Forex Community Lead</div>
-        <div class="review-date">2024-03-12</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"The algo executes beautifully — the risk controls are excellent." </p>
-        <div class="review-meta">Lina, Day Trader</div>
-        <div class="review-date">2024-04-20</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"Professional and transparent; the team and the bot both work well together." </p>
+        <p class="review-quote">"Professional and transparent; the team and the bot both work well together."</p>
         <div class="review-meta">Michael, AI Trader</div>
         <div class="review-date">2024-05-18</div>
       </article>
-
       <article class="review-card">
-        <p class="review-quote">"Joined through a Telegram community — Arora Target Invest helped me recover losses." </p>
-        <div class="review-meta">Rahul, Client</div>
-        <div class="review-date">2024-06-09</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"Target Invest FX is redefining automated trading for retail clients." </p>
-        <div class="review-meta">Anya, Crypto Trader</div>
-        <div class="review-date">2024-07-05</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"Near-perfect signals; consistent weekly growth." </p>
-        <div class="review-meta">David, Market Analyst</div>
-        <div class="review-date">2024-08-14</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"From signals to execution — everything feels premium and precise." </p>
-        <div class="review-meta">Suresh, Investor</div>
-        <div class="review-date">2024-09-30</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"The algo trades like a pro — great onboarding experience." </p>
-        <div class="review-meta">Maria, Verified Client</div>
-        <div class="review-date">2024-10-18</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"AI handles the emotions — I no longer overtrade." </p>
-        <div class="review-meta">Omar, Crypto Analyst</div>
-        <div class="review-date">2024-12-03</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"Clear communication, fast updates and stable performance." </p>
-        <div class="review-meta">Neha, Trader</div>
-        <div class="review-date">2025-02-25</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"I’ve tried many platforms — Target Invest FX is the most stable." </p>
-        <div class="review-meta">Leo, Client</div>
-        <div class="review-date">2025-04-10</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"Community-integrated system with near-perfect accuracy." </p>
+        <p class="review-quote">"Community-integrated system with near-perfect accuracy."</p>
         <div class="review-meta">Emily, Community Partner</div>
         <div class="review-date">2025-07-06</div>
-      </article>
-
-      <article class="review-card">
-        <p class="review-quote">"Real results — genuine service and consistent gains." </p>
-        <div class="review-meta">Rohit Sharma, Verified Client</div>
-        <div class="review-date">2025-10-05</div>
       </article>
     </div>
   </section>
@@ -231,52 +161,41 @@
   <section class="faq-wrap">
     <div class="faq-title">Frequently Asked Questions</div>
 
-    <div class="faq-item" id="faq1">
-      <div class="faq-q">What is my work or what should I do as a beginner? <span aria-hidden="true">+</span></div>
+    <div class="faq-item">
+      <div class="faq-q">What should I do as a beginner? <span>+</span></div>
       <div class="faq-a">
-        <p>After you join, our expert team and AI-driven systems handle most of the trading process: market scanning, strategy selection, and execution. Your role is simple — connect on WhatsApp, follow our daily updates, and monitor performance. We'll guide you step-by-step.</p>
+        <p>After you join, our AI-driven systems handle most of the trading — your job is just to connect on WhatsApp, follow our daily updates and track your progress.</p>
       </div>
     </div>
 
-    <div class="faq-item" id="faq2">
-      <div class="faq-q">Do I need trading experience to use it? <span aria-hidden="true">+</span></div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need trading experience? <span>+</span></div>
       <div class="faq-a">
-        <p>No. Our AI + algorithmic trading framework is built for both beginners and pros. It analyzes price, volume and market structure using models refined across 11+ years, and suggests/executed high-probability setups automatically.</p>
+        <p>No. The system is built for both beginners and pros, analyzing market data using AI models refined over 11+ years.</p>
       </div>
     </div>
 
-    <div class="faq-item" id="faq3">
-      <div class="faq-q">What's the recommended starting amount for trading? <span aria-hidden="true">+</span></div>
+    <div class="faq-item">
+      <div class="faq-q">How much should I start with? <span>+</span></div>
       <div class="faq-a">
-        <p>You can begin with <strong>$70–$80</strong> to test our strategies, but we recommend <strong>$250–$500</strong> for better flexibility, smoother results and higher profit potential — optimized through our AI-driven risk management approach.</p>
+        <p>You can begin with <strong>$70–$80</strong>, though we recommend <strong>$250–$500</strong> for smoother and higher returns.</p>
       </div>
     </div>
   </section>
 
-  <!-- sticky whatsapp CTA (mobile) -->
-  <a class="wa-float" href="https://wa.me/message/IUKHBAIKG5UIN1" target="_blank" rel="noopener">Connect with us on WhatsApp</a>
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <a class="wa-float" href="https://wa.me/message/IUKHBAIKG5UIN1" target="_blank">Connect with us on WhatsApp</a>
 
 <script>
-  // FAQ toggle
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const parent = q.parentElement;
-      parent.classList.toggle('open');
-      // close others if you want single-open behavior:
-      // document.querySelectorAll('.faq-item').forEach(it => { if(it !== parent) it.classList.remove('open') })
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      q.parentElement.classList.toggle('open');
     });
   });
-
-  // Make reviews track center the first card (nice UX)
-  (function(){ const track = document.getElementById('reviewsTrack'); if(track){ track.scrollLeft = 8; }} )();
-
-  // Optional: keyboard arrows for review navigation
-  document.addEventListener('keydown', (e)=>{
-    const track = document.getElementById('reviewsTrack');
-    if(!track) return;
-    if(e.key === 'ArrowRight') track.scrollBy({left: track.clientWidth * 0.7, behavior:'smooth'});
-    if(e.key === 'ArrowLeft') track.scrollBy({left: -track.clientWidth * 0.7, behavior:'smooth'});
-  });
+  (function(){
+    const track=document.getElementById('reviewsTrack');
+    if(track){ track.scrollLeft=8; }
+  })();
 </script>
 </body>
 </html>
